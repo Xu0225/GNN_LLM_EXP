@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<key id="label" for="node" attr.name="label" attr.type="string"/>
+<graph id="G" edgedefault="undirected">
+
+<node id="n0">
+<data key="label">Adelaide1</data>
+</node>
+<node id="n1">
+<data key="label">Adelaide2</data>
+</node>
+<node id="n2">
+<data key="label">Alice Springs</data>
+</node>
+<node id="n3">
+<data key="label">Armidale</data>
+</node>
+<node id="n4">
+<data key="label">Brisbane1</data>
+</node>
+<node id="n5">
+<data key="label">Brisbane2</data>
+</node>
+<node id="n6">
+<data key="label">Cairns</data>
+</node>
+<node id="n7">
+<data key="label">Canberra1</data>
+</node>
+<node id="n8">
+<data key="label">Canberra2</data>
+</node>
+<node id="n9">
+<data key="label">Darwin</data>
+</node>
+<node id="n10">
+<data key="label">Hobart</data>
+</node>
+<node id="n11">
+<data key="label">Melbourne1</data>
+</node>
+<node id="n12">
+<data key="label">Melbourne2</data>
+</node>
+<node id="n13">
+<data key="label">Perth1</data>
+</node>
+<node id="n14">
+<data key="label">Perth2</data>
+</node>
+<node id="n15">
+<data key="label">Rockhampton</data>
+</node>
+<node id="n16">
+<data key="label">Sydney1</data>
+</node>
+<node id="n17">
+<data key="label">Sydney2</data>
+</node>
+<node id="n18">
+<data key="label">Townsville</data>
+</node>
+
+<edge source="n0" target="n1"/> 
+<edge source="n1" target="n2"/> 
+<edge source="n1" target="n12"/> 
+<edge source="n1" target="n14"/> 
+<edge source="n2" target="n9"/> 
+<edge source="n4" target="n5"/> 
+<edge source="n4" target="n15"/> 
+<edge source="n4" target="n16"/> 
+<edge source="n6" target="n18"/> 
+<edge source="n7" target="n8"/> 
+<edge source="n7" target="n11"/> 
+<edge source="n8" target="n16"/> 
+<edge source="n10" target="n11"/> 
+<edge source="n10" target="n12"/> 
+<edge source="n11" target="n12"/> 
+<edge source="n13" target="n14"/> 
+<edge source="n15" target="n18"/> 
+<edge source="n16" target="n17"/> 
+</graph>
+</graphml>

@@ -1,0 +1,21 @@
+System:
+你是一名经验丰富的无线网络运维工程师，擅长根据设备告警信息和拓扑结构恢复网络拓扑。
+请严格按照示例的输出格式，仅返回 JSON 对象，无任何额外说明。
+
+Example 1:
+Graph nodes: ['A', 'B', 'C']
+Graph edges: [['A', 'B'], ['B', 'C']]
+Alerts: {'B': 'CPU利用率超过90%'}
+Expected JSON output: {'removed_nodes': [], 'removed_edges': [['B','C']], 'full_graphml': '...完整 GraphML 文本...'}
+
+Example 2:
+Graph nodes: ['X', 'Y']
+Graph edges: [['X', 'Y']]
+Alerts: {}
+Expected JSON output: {'removed_nodes': ['Y'], 'removed_edges': [], 'full_graphml': '...完整 GraphML 文本...'}
+
+User:
+Graph nodes: ['BBU-000', 'SW-001', 'BBU-002', 'BBU-003', 'SW-004', 'SW-005', 'RRU-006', 'RRU-007', 'SW-008', 'BBU-009', 'BBU-010', 'RRU-011', 'BBU-012', 'SW-013', 'SW-014', 'BBU-015', 'SW-016', 'BBU-017', 'SW-018']
+Graph edges: [['BBU-000', 'BBU-010'], ['BBU-000', 'BBU-003'], ['BBU-000', 'RRU-006'], ['SW-001', 'BBU-003'], ['SW-001', 'RRU-006'], ['BBU-002', 'BBU-010'], ['BBU-002', 'BBU-015'], ['BBU-003', 'SW-008'], ['BBU-003', 'SW-016'], ['SW-004', 'SW-005'], ['SW-004', 'RRU-007'], ['RRU-006', 'RRU-007'], ['BBU-009', 'SW-016'], ['BBU-009', 'BBU-015'], ['RRU-011', 'BBU-012'], ['RRU-011', 'SW-013'], ['BBU-012', 'SW-014'], ['SW-013', 'SW-018'], ['SW-013', 'SW-014'], ['SW-014', 'SW-016'], ['SW-014', 'BBU-017'], ['BBU-015', 'SW-016'], ['BBU-017', 'SW-018']]
+Alerts: {'SW-013': '节点13的连接数4高于平均度2.5，存在过载风险', 'BBU-003': '节点3的连接数4高于平均度2.5，存在过载风险', 'BBU-015': '节点15的连接数4高于平均度2.5，存在过载风险', 'SW-014': '节点14检测到丢包率超过5%，影响无线链路质量', 'SW-016': '节点16检测到丢包率超过5%，影响无线链路质量'}
+Expected JSON output:

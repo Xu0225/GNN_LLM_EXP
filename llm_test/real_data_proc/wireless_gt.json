@@ -1,0 +1,10 @@
+{
+  "mode": "node",
+  "removed_nodes": [
+    "SW-008",
+    "SW-002",
+    "BBU-018",
+    "RRU-016",
+    "SW-015"
+  ]
+}
