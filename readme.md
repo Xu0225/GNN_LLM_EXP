@@ -94,11 +94,11 @@ python src/visualize_linkpred.py --input results/xxx_pred.csv
 
 ```bash
 # 原始拓扑转换
-python trans_to_realsenerio.py \
-  --input original_topology.graphml \
-  --scenario wireless \
-  --internal_only \
-  --drop_orig_label \
+python trans_to_realsenerio.py
+  --input original_topology.graphml
+  --scenario wireless
+  --internal_only
+  --drop_orig_label
   --output wireless_real.graphml
 ```
 ```bash
