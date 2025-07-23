@@ -44,7 +44,7 @@ GNN_LLM_EXP/
 
 1. **克隆项目**
    ```bash
-   git clone https://github.com/你的用户名/GNN_LLM_EXP.git
+   git clone https://github.com/Xu0225/GNN_LLM_EXP.git
    cd GNN_LLM_EXP
    ```
 
@@ -53,8 +53,6 @@ GNN_LLM_EXP/
    ```bash
    pip install -r requirements.txt
    ```
-   （如无 requirements.txt，请根据代码中的 import 手动安装依赖，如 torch, networkx, matplotlib, transformers 等）
-
 ---
 
 ## 快速开始
@@ -79,8 +77,6 @@ python src/train_link_pred.py --config configs/link_pred.yaml
 python src/train_node_rec.py --config configs/node_rec.yaml
 ```
 
-（具体参数和配置请参考各脚本说明或源码）
-
 ### 3. 推理与评估
 
 ```bash
@@ -94,11 +90,30 @@ python src/evaluate_link_pred.py --result results/xxx_pred.csv
 python src/visualize_linkpred.py --input results/xxx_pred.csv
 ```
 
-### 5. LLM 相关实验
+### 5. LLM 提示词生成
 
 ```bash
-python llm_test/generate_prompt.py
-python llm_test/eval.py
+# 原始拓扑转换
+python trans_to_realsenerio.py \
+  --input original_topology.graphml \
+  --scenario wireless \
+  --internal_only \
+  --drop_orig_label \
+  --output wireless_real.graphml
+```
+```bash
+# 提示词生成
+python generate_prompt.py
+  --gml ./net_topologies/wireless_scenario.graphml 
+  --remove_ratio 0.15
+  --mode node
+  --scenario wireless
+  --with_alerts
+  --alert_mode aligned
+  --out ./prompts/Chinanet_prompt.txt
+  --mask_out ./topologies/Chinanet_mask.graphml
+  --gt_json ./topologies/Chinanet_gt.json
+  --seed 42
 ```
 
 ---
@@ -124,15 +139,3 @@ python llm_test/eval.py
 - **processed/**、**models/**：不同网络/任务的模型权重
 
 ---
-
-## 参考与致谢
-
-- [PyTorch Geometric](https://pytorch-geometric.readthedocs.io/)
-- [NetworkX](https://networkx.org/)
-- [Transformers](https://huggingface.co/transformers/)
-- 相关网络拓扑公开数据集
----
-
-## License
-本项目采用 MIT License，详见 LICENSE 文件。
-
